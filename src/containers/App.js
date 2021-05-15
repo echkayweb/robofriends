@@ -12,11 +12,11 @@ const App = () => {
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
-      .then((users) => setRobots({ robots: users }));
-  });
+      .then((users) => setRobots(users));
+  }, []);
 
   const onSearchChange = (event) => {
-    setSearchField({ searchField: event.target.value });
+    setSearchField(event.target.value);
   };
 
   const filteredRobots = robots.filter((robot) => {
